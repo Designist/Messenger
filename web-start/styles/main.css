@@ -199,7 +199,23 @@ main, #messages-card {
 }
 
 .mdl-color--light-blue-700 {
-  background-color: rgb(64,64,64) !important;
+  background: rgb(64,64,64) !important;
   border-bottom: 2px solid rgb(53,172,25);
   box-shadow: none;
+}
+
+#user-container {
+  top: 1px;
+}
+
+.mdl-grid {
+  max-width: initial;
+}
+
+.mdl-shadow--2dp {
+  box-shadow: none;
+}
+
+.mdl-card {
+  background-color: rgb(236,239,241);
 }

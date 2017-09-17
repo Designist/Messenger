@@ -207,6 +207,7 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
     this.userName.textContent = userName;
 
     // Show user's profile and sign-out button.
+    document.getElementById('hangoutlogo').removeAttribute('hidden');
     this.userName.removeAttribute('hidden');
     this.userPic.removeAttribute('hidden');
     this.signOutButton.removeAttribute('hidden');
@@ -221,6 +222,7 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
     this.saveMessagingDeviceToken();
   } else { // User is signed out!
     // Hide user's profile and sign-out button.
+    document.getElementById('hangoutlogo').setAttribute('hidden', 'true');
     this.userName.setAttribute('hidden', 'true');
     this.userPic.setAttribute('hidden', 'true');
     this.signOutButton.setAttribute('hidden', 'true');

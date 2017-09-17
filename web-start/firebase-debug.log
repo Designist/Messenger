@@ -62,3 +62,145 @@
 [info] i  hosting: Serving hosting files from: ./
 [info] ✔  hosting: Local server: http://localhost:5000
 
+[debug] [2017-09-17T05:41:46.912Z] Error: getaddrinfo ENOTFOUND www.gstatic.com www.gstatic.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:91:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2017-09-17T05:41:46.914Z] Error: socket hang up
+    at createHangUpError (_http_client.js:344:15)
+    at TLSSocket.socketCloseListener (_http_client.js:376:23)
+    at emitOne (events.js:120:20)
+    at TLSSocket.emit (events.js:210:7)
+    at _handle.close (net.js:549:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:350:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2017-09-17T05:44:15.025Z] ----------------------------------------------------------------------
+[debug] [2017-09-17T05:44:15.026Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-17T05:44:15.026Z] CLI Version:   3.11.0
+[debug] [2017-09-17T05:44:15.026Z] Platform:      darwin
+[debug] [2017-09-17T05:44:15.026Z] Node Version:  v8.1.3
+[debug] [2017-09-17T05:44:15.027Z] Time:          Sun Sep 17 2017 01:44:15 GMT-0400 (EDT)
+[debug] [2017-09-17T05:44:15.027Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-17T05:44:15.036Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-17T05:44:15.037Z] > authorizing via signed-in user
+[debug] [2017-09-17T05:44:15.038Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-09-17T05:44:15.038Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/m9zUvDBQjsXgQWRGGFpzq1Owzf97m-eVnV9oGmiFmnCKL43jmuB5tJVjxepWBpx6',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Sep 17 2017 01:44:15 GMT-0400 (EDT)
+[debug] [2017-09-17T05:44:15.227Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T05:44:15.234Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/messenger-ced72  
+ Sun Sep 17 2017 01:44:15 GMT-0400 (EDT)
+[debug] [2017-09-17T05:44:15.524Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T05:44:15.524Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/messenger-ced72/tokens  
+ Sun Sep 17 2017 01:44:15 GMT-0400 (EDT)
+[debug] [2017-09-17T05:44:16.017Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Nicholas/GitHub/Messenger/web-start'...
+[info] 
+[debug] [2017-09-17T05:44:16.020Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/messenger-ced72  
+ Sun Sep 17 2017 01:44:16 GMT-0400 (EDT)
+[debug] [2017-09-17T05:44:16.283Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T05:44:16.284Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/470107359137/clients/_:getWebAppConfig  
+ Sun Sep 17 2017 01:44:16 GMT-0400 (EDT)
+[debug] [2017-09-17T05:44:16.616Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2017-09-17T06:11:13.696Z] Error: getaddrinfo ENOTFOUND www.gstatic.com www.gstatic.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:91:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2017-09-17T06:11:13.697Z] Error: socket hang up
+    at createHangUpError (_http_client.js:344:15)
+    at TLSSocket.socketCloseListener (_http_client.js:376:23)
+    at emitOne (events.js:120:20)
+    at TLSSocket.emit (events.js:210:7)
+    at _handle.close (net.js:549:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:350:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2017-09-17T06:11:22.864Z] ----------------------------------------------------------------------
+[debug] [2017-09-17T06:11:22.866Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-17T06:11:22.866Z] CLI Version:   3.11.0
+[debug] [2017-09-17T06:11:22.866Z] Platform:      darwin
+[debug] [2017-09-17T06:11:22.866Z] Node Version:  v8.1.3
+[debug] [2017-09-17T06:11:22.867Z] Time:          Sun Sep 17 2017 02:11:22 GMT-0400 (EDT)
+[debug] [2017-09-17T06:11:22.867Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-17T06:11:22.879Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-17T06:11:22.880Z] > authorizing via signed-in user
+[debug] [2017-09-17T06:11:22.881Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/messenger-ced72  
+ Sun Sep 17 2017 02:11:22 GMT-0400 (EDT)
+[debug] [2017-09-17T06:11:22.909Z] Error: getaddrinfo ENOTFOUND admin.firebase.com admin.firebase.com:443
+    at errnoException (dns.js:50:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:91:26)
+[error] 
+[error] Error: Server Error. getaddrinfo ENOTFOUND admin.firebase.com admin.firebase.com:443
+[debug] [2017-09-17T06:12:12.373Z] ----------------------------------------------------------------------
+[debug] [2017-09-17T06:12:12.375Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-17T06:12:12.375Z] CLI Version:   3.11.0
+[debug] [2017-09-17T06:12:12.375Z] Platform:      darwin
+[debug] [2017-09-17T06:12:12.375Z] Node Version:  v8.1.3
+[debug] [2017-09-17T06:12:12.376Z] Time:          Sun Sep 17 2017 02:12:12 GMT-0400 (EDT)
+[debug] [2017-09-17T06:12:12.376Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-17T06:12:12.385Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-17T06:12:12.385Z] > authorizing via signed-in user
+[debug] [2017-09-17T06:12:12.386Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/messenger-ced72  
+ Sun Sep 17 2017 02:12:12 GMT-0400 (EDT)
+[debug] [2017-09-17T06:12:36.195Z] ----------------------------------------------------------------------
+[debug] [2017-09-17T06:12:36.197Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-17T06:12:36.197Z] CLI Version:   3.11.0
+[debug] [2017-09-17T06:12:36.197Z] Platform:      darwin
+[debug] [2017-09-17T06:12:36.197Z] Node Version:  v8.1.3
+[debug] [2017-09-17T06:12:36.198Z] Time:          Sun Sep 17 2017 02:12:36 GMT-0400 (EDT)
+[debug] [2017-09-17T06:12:36.198Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-17T06:12:36.207Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-17T06:12:36.208Z] > authorizing via signed-in user
+[debug] [2017-09-17T06:12:36.209Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/messenger-ced72  
+ Sun Sep 17 2017 02:12:36 GMT-0400 (EDT)
+[debug] [2017-09-17T06:12:41.188Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T06:12:41.189Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/messenger-ced72/tokens  
+ Sun Sep 17 2017 02:12:41 GMT-0400 (EDT)
+[debug] [2017-09-17T06:12:43.031Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Nicholas/GitHub/Messenger/web-start'...
+[info] 
+[debug] [2017-09-17T06:12:43.034Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/messenger-ced72  
+ Sun Sep 17 2017 02:12:43 GMT-0400 (EDT)
+[debug] [2017-09-17T06:13:02.942Z] ----------------------------------------------------------------------
+[debug] [2017-09-17T06:13:02.944Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-17T06:13:02.944Z] CLI Version:   3.11.0
+[debug] [2017-09-17T06:13:02.944Z] Platform:      darwin
+[debug] [2017-09-17T06:13:02.944Z] Node Version:  v8.1.3
+[debug] [2017-09-17T06:13:02.945Z] Time:          Sun Sep 17 2017 02:13:02 GMT-0400 (EDT)
+[debug] [2017-09-17T06:13:02.945Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-17T06:13:02.954Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-17T06:13:02.954Z] > authorizing via signed-in user
+[debug] [2017-09-17T06:13:02.956Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/messenger-ced72  
+ Sun Sep 17 2017 02:13:02 GMT-0400 (EDT)
+[debug] [2017-09-17T06:13:03.273Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T06:13:03.274Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/messenger-ced72/tokens  
+ Sun Sep 17 2017 02:13:03 GMT-0400 (EDT)
+[debug] [2017-09-17T06:13:03.663Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Nicholas/GitHub/Messenger/web-start'...
+[info] 
+[debug] [2017-09-17T06:13:03.666Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/messenger-ced72  
+ Sun Sep 17 2017 02:13:03 GMT-0400 (EDT)
+[debug] [2017-09-17T06:13:03.965Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T06:13:03.965Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/470107359137/clients/_:getWebAppConfig  
+ Sun Sep 17 2017 02:13:03 GMT-0400 (EDT)
+[debug] [2017-09-17T06:13:04.250Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] ✔  hosting: Local server: http://localhost:5000
+
