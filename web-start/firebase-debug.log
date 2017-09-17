@@ -1,0 +1,64 @@
+[debug] [2017-09-17T03:42:03.695Z] ----------------------------------------------------------------------
+[debug] [2017-09-17T03:42:03.697Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-17T03:42:03.697Z] CLI Version:   3.11.0
+[debug] [2017-09-17T03:42:03.697Z] Platform:      darwin
+[debug] [2017-09-17T03:42:03.697Z] Node Version:  v8.1.3
+[debug] [2017-09-17T03:42:03.697Z] Time:          Sat Sep 16 2017 23:42:03 GMT-0400 (EDT)
+[debug] [2017-09-17T03:42:03.697Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-17T03:42:03.707Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-17T03:42:03.707Z] > authorizing via signed-in user
+[debug] [2017-09-17T03:42:03.708Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-09-17T03:42:03.709Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/m9zUvDBQjsXgQWRGGFpzq1Owzf97m-eVnV9oGmiFmnCKL43jmuB5tJVjxepWBpx6',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Sep 16 2017 23:42:03 GMT-0400 (EDT)
+[debug] [2017-09-17T03:42:03.894Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T03:42:03.901Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/messenger-ced72  
+ Sat Sep 16 2017 23:42:03 GMT-0400 (EDT)
+[debug] [2017-09-17T03:42:04.262Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T03:42:04.263Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/messenger-ced72/tokens  
+ Sat Sep 16 2017 23:42:04 GMT-0400 (EDT)
+[debug] [2017-09-17T03:42:04.761Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Nicholas/GitHub/Messenger/web-start'...
+[info] 
+[debug] [2017-09-17T03:42:04.764Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/messenger-ced72  
+ Sat Sep 16 2017 23:42:04 GMT-0400 (EDT)
+[debug] [2017-09-17T03:42:04.969Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T03:42:04.970Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/470107359137/clients/_:getWebAppConfig  
+ Sat Sep 16 2017 23:42:04 GMT-0400 (EDT)
+[debug] [2017-09-17T03:42:05.266Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2017-09-17T03:52:00.493Z] ----------------------------------------------------------------------
+[debug] [2017-09-17T03:52:00.495Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-17T03:52:00.495Z] CLI Version:   3.11.0
+[debug] [2017-09-17T03:52:00.495Z] Platform:      darwin
+[debug] [2017-09-17T03:52:00.495Z] Node Version:  v8.1.3
+[debug] [2017-09-17T03:52:00.495Z] Time:          Sat Sep 16 2017 23:52:00 GMT-0400 (EDT)
+[debug] [2017-09-17T03:52:00.495Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-17T03:52:00.505Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-17T03:52:00.505Z] > authorizing via signed-in user
+[debug] [2017-09-17T03:52:00.506Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/messenger-ced72  
+ Sat Sep 16 2017 23:52:00 GMT-0400 (EDT)
+[debug] [2017-09-17T03:52:00.866Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T03:52:00.867Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/messenger-ced72/tokens  
+ Sat Sep 16 2017 23:52:00 GMT-0400 (EDT)
+[debug] [2017-09-17T03:52:01.333Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Nicholas/GitHub/Messenger/web-start'...
+[info] 
+[debug] [2017-09-17T03:52:01.336Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/messenger-ced72  
+ Sat Sep 16 2017 23:52:01 GMT-0400 (EDT)
+[debug] [2017-09-17T03:52:01.582Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-17T03:52:01.583Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/470107359137/clients/_:getWebAppConfig  
+ Sat Sep 16 2017 23:52:01 GMT-0400 (EDT)
+[debug] [2017-09-17T03:52:01.849Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] ✔  hosting: Local server: http://localhost:5000
+
