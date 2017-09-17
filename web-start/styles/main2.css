@@ -22,15 +22,16 @@ main, #messages-card {
   padding-bottom: 0;
 }
 #messages-card-container {
-  height: calc(100% - 150px);
+  height: calc(100% - 100px);
   padding-bottom: 0;
 }
 #messages-card {
-  margin-top: 15px;
+  margin-top: 30px;
 }
+
 .mdl-layout__header-row span {
   margin-left: 15px;
-  margin-top: 17px;
+  margin-top: 3px;
 }
 .mdl-grid {
   max-width: 1024px;
@@ -39,6 +40,11 @@ main, #messages-card {
 .material-icons {
   font-size: 36px;
   top: 8px;
+  position: relative;
+}
+.bubble {
+  font-size: 33px;
+  top: 12px;
   position: relative;
 }
 .mdl-layout__header-row {
@@ -125,12 +131,18 @@ main, #messages-card {
   background: linear-gradient(white, #f9f9f9);
   justify-content: space-between;
 }
+.logo-title {
+  position:absolute;
+  height: 100%;
+  bottom: -5px;
+  font-size: 18px;
+  left:70px;
+}
 #user-container {
   position: absolute;
   display: flex;
   flex-direction: row;
-  top: 22px;
-  width: 100%;
+  top:15px;
   right: 0;
   padding-left: 10px;
   justify-content: flex-end;
@@ -188,84 +200,12 @@ main, #messages-card {
   }
 }
 .mdl-textfield__label:after {
-  background-color: #0288D1;
+  background-color: #4CAF50;
 }
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
-  color: #0288D1;
+  color: #4CAF50;
 }
 .mdl-button .material-icons {
   top: -1px;
   margin-right: 5px;
-}
-
-.mdl-color--light-blue-700 {
-  background: rgb(64,64,64) !important;
-  border-bottom: 2px solid rgb(53,172,25);
-  box-shadow: none;
-}
-
-#user-container {
-  top: 1px;
-}
-
-.mdl-grid {
-  max-width: initial;
-}
-
-.mdl-shadow--2dp {
-  box-shadow: none;
-}
-
-.mdl-card {
-  background-color: rgb(236,239,241);
-}
-
-#messages {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.mdl-card__supporting-text {
-  padding: 0;
-}
-
-#message-form, #image-form {
-  background: rgb(250,250,250);
-  box-shadow: 2px -1px 2px grey
-}
-
-#image-form {
-  height: 67px;
-  margin-left: -16px;
-  padding-right: 16px;
-}
-
-#message-form .mdl-textfield {
-  width: calc(100% - 150px);
-  margin-left: 16px;
-}
-
-.message-container .spacing {
-  padding-right: 10px;  
-}
-
-.message-container .message {
-  background: white;
-  padding-right: 10px;
-  position: relative;
-}
-
-.message-container .message:after {
-  right: 100%;
-  top: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(255, 255, 255, 0);
-  border-right-color: #ffffff;
-  border-width: 5px;
-  margin-top: -5px;
 }

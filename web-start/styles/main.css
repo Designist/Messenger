@@ -236,8 +236,36 @@ main, #messages-card {
 
 #image-form {
   height: 67px;
+  margin-left: -16px;
+  padding-right: 16px;
 }
 
 #message-form .mdl-textfield {
+  width: calc(100% - 150px);
   margin-left: 16px;
+}
+
+.message-container .spacing {
+  padding-right: 10px;
+}
+
+.message-container .message {
+  background: white;
+  padding-right: 10px;
+  position: relative;
+}
+
+.message-container .message:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-right-color: #ffffff;
+  border-width: 5px;
+  margin-top: -5px;
 }

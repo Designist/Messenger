@@ -87,8 +87,8 @@ FriendlyChat.prototype.loadObserveMessages = function() {
     var val = data.val();
     this.displayMessage(this.observeList, data.key, val.name, val.text, val.photoUrl, val.imageUrl);
   }.bind(this);
-  this.observeMessagesRef.limitToLast(12).on('child_added', setMessage);
-  this.observeMessagesRef.limitToLast(12).on('child_changed', setMessage);
+  this.observeMessagesRef.limitToLast(2).on('child_added', setMessage);
+  this.observeMessagesRef.limitToLast(2).on('child_changed', setMessage);
 }
 
 // Saves a new message on the Firebase DB.
