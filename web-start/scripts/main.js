@@ -186,7 +186,21 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
 // Signs-in Friendly Chat.
 FriendlyChat.prototype.signIn = function() {
   var provider = new firebase.auth.GoogleAuthProvider();
-  this.auth.signInWithPopup(provider);
+  this.auth.signInWithPopup(provider)
+    .then((result)  => {
+      var token = result.credential.accessToken;
+      var user = result.user;
+      this.onlineUsersRef = this.database.ref('onlineUsers');
+      this.onlineUsersRef.orderByChild("admin").equalTo(0).once("value", (snapshot) => {
+        let updates = {}
+        snapshot.forEach(child => updates[child.key] = null);
+        this.onlineUsersRef.update(updates);
+        var out = this.onlineUsersRef.push({
+          uid: user.uid,
+          admin: 0
+        });
+      });
+  });
 };
 
 // Signs-out of Friendly Chat.
@@ -207,7 +221,6 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
     this.userName.textContent = userName;
 
     // Show user's profile and sign-out button.
-    document.getElementById('hangoutlogo').removeAttribute('hidden');
     this.userName.removeAttribute('hidden');
     this.userPic.removeAttribute('hidden');
     this.signOutButton.removeAttribute('hidden');
@@ -222,7 +235,6 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
     this.saveMessagingDeviceToken();
   } else { // User is signed out!
     // Hide user's profile and sign-out button.
-    document.getElementById('hangoutlogo').setAttribute('hidden', 'true');
     this.userName.setAttribute('hidden', 'true');
     this.userPic.setAttribute('hidden', 'true');
     this.signOutButton.setAttribute('hidden', 'true');
