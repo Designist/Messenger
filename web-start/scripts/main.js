@@ -104,6 +104,8 @@ FriendlyChat.prototype.saveMessage = function(e) {
 };
 
 FriendlyChat.prototype.updateObserveMessage = function(e) {
+
+  console.log(this.currentMessageId);
   if (this.messageInput.value && this.checkSignedInWithMessage()) {
     var currentUser = this.auth.currentUser;
     if (this.currentMessageId == -1) {
@@ -113,7 +115,6 @@ FriendlyChat.prototype.updateObserveMessage = function(e) {
           photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
       });
       this.currentMessageId = postRef.key;
-
     }
     else {
       var obj = {}
@@ -191,13 +192,16 @@ FriendlyChat.prototype.signIn = function() {
       var token = result.credential.accessToken;
       var user = result.user;
       this.onlineUsersRef = this.database.ref('onlineUsers');
+      console.log("hellO");
       this.onlineUsersRef.orderByChild("admin").equalTo(0).once("value", (snapshot) => {
+        console.log("hello");
         let updates = {}
         snapshot.forEach(child => updates[child.key] = null);
         this.onlineUsersRef.update(updates);
         var out = this.onlineUsersRef.push({
           uid: user.uid,
-          admin: 0
+          admin: 0,
+          photoUrl: user.photoURL || '/images/profile_placeholder.png'
         });
       });
   });
