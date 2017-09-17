@@ -77,22 +77,17 @@
         <div id="profile-pic-container">
           <img id="profile-pic"/>
         </div>
-        <div id="name">Nicholas Tomlin</div>
+        <div id="name"><span id="display-name"></div>
         <div id="security-fails">
-          <a href="#">Login Details</a> | <a href="#">Security Questions</a>
+          <a id="login" href="#">Login Details</a> | <a id="security" href="#">Security Questions</a>
+        </div>
         <div class="profile-name">
           <span id="display-name">
         </div>
         <div>
           <h4> Currently typing... </h4>
         </div>
-        <div id="observation-card" class="small-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
-          <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-            <div id="observe-messages">
-              <span id="observe-message-filler"></span>
-            </div>
-          </div>
-        </div>
+        <div id="textbox"><span id="textinthebox"></span></div>
       </div>
       <!-- Messages container -->
       <div id="messages-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col ">
@@ -122,6 +117,32 @@
       <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
         <div class="mdl-snackbar__text"></div>
         <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+
+    </div>
+
+    <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p style="text-align: center; font-weight: 700;">Coming in Version 1.3</p>
+        <p>Username: ************</p>
+        <p>Password: ************</p>
+        <p>User registration, which will be released in Version 1.3 (est. Nov 2017), will require username and password information which can be accessed by the admin.</p>
+      </div>
+
+    </div>
+
+    <div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p style="text-align: center; font-weight: 700;">Coming in Version 1.3</p>
+        <p>Question: what's your mother's maiden name?</p>
+        <p>Answer: ***********</p>
+        <p>Version 1.3 will include user registration (separate from Google authentication), which requires registration of a username and password, along with other sensitive information like email addresses, answers to security questions, etc. This version has an estimated release date of November 2017.</p>
       </div>
 
     </div>

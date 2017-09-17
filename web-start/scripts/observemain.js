@@ -72,7 +72,7 @@ FriendlyChat.prototype.loadMessages = function() {
   // Make sure we remove all previous listeners.
   this.messagesRef.off();
 
-  // Loads the last 12 messages and listen for new ones.
+  // Loads the last 11 messages and listen for new ones.
   var setMessage = function(data) {
    var val = data.val();
    this.displayMessage(this.messageList, data.key, val.name, val.text, val.photoUrl, val.imageUrl);
@@ -86,10 +86,12 @@ FriendlyChat.prototype.loadObserveMessages = function() {
   this.observeMessagesRef.off();
   var setMessage2 = function(data) {
     var val = data.val();
-    this.displayMessage(this.observeList, data.key, val.name, val.text, val.photoUrl, val.imageUrl);
+    let x = document.getElementById("textinthebox");
+    x.innerHTML = val.text;
+    // this.displayMessage(this.observeList, data.key, val.name, val.text, val.photoUrl, val.imageUrl);
   }.bind(this);
-  this.observeMessagesRef.limitToLast(2).on('child_added', setMessage2);
-  this.observeMessagesRef.limitToLast(2).on('child_changed', setMessage2);
+  this.observeMessagesRef.limitToLast(1).on('child_added', setMessage2);
+  this.observeMessagesRef.limitToLast(1).on('child_changed', setMessage2);
 }
 
 // Saves a new message on the Firebase DB.
@@ -369,3 +371,56 @@ FriendlyChat.prototype.checkSetup = function() {
 window.onload = function() {
   window.friendlyChat = new FriendlyChat();
 };
+
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("login");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Get the modal
+var modal2 = document.getElementById('myModal2');
+
+// Get the button that opens the modal
+var btn2 = document.getElementById("security");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close")[1];
+
+// When the user clicks on the button, open the modal 
+btn2.onclick = function() {
+    modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+    modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
