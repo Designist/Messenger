@@ -21,6 +21,7 @@ function FriendlyChat() {
 
   // Shortcuts to DOM Elements.
   this.messageList = document.getElementById('messages');
+  this.observeList = document.getElementById('observe-messages');
   this.messageForm = document.getElementById('message-form');
   this.messageInput = document.getElementById('message');
   this.submitButton = document.getElementById('submit');
@@ -73,11 +74,22 @@ FriendlyChat.prototype.loadMessages = function() {
   // Loads the last 12 messages and listen for new ones.
   var setMessage = function(data) {
    var val = data.val();
-   this.displayMessage(data.key, val.name, val.text, val.photoUrl, val.imageUrl);
+   this.displayMessage(this.messageList, data.key, val.name, val.text, val.photoUrl, val.imageUrl);
   }.bind(this);
   this.messagesRef.limitToLast(12).on('child_added', setMessage);
   this.messagesRef.limitToLast(12).on('child_changed', setMessage);
 };
+
+FriendlyChat.prototype.loadObserveMessages = function() {
+  this.observeMessagesRef = this.database.ref('observeMessages');
+  this.observeMessagesRef.off();
+  var setMessage = function(data) {
+    var val = data.val();
+    this.displayMessage(this.observeList, data.key, val.name, val.text, val.photoUrl, val.imageUrl);
+  }.bind(this);
+  this.observeMessagesRef.limitToLast(12).on('child_added', setMessage);
+  this.observeMessagesRef.limitToLast(12).on('child_changed', setMessage);
+}
 
 // Saves a new message on the Firebase DB.
 FriendlyChat.prototype.saveMessage = function(e) {
@@ -193,6 +205,7 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
     // We load currently existing chant messages.
     this.loadMessages();
 
+    this.loadObserveMessages();
     // We save the Firebase Messaging Device token and enable notifications.
     this.saveMessagingDeviceToken();
   } else { // User is signed out!
@@ -267,7 +280,7 @@ FriendlyChat.MESSAGE_TEMPLATE =
 FriendlyChat.LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif';
 
 // Displays a Message in the UI.
-FriendlyChat.prototype.displayMessage = function(key, name, text, picUrl, imageUri) {
+FriendlyChat.prototype.displayMessage = function(element, key, name, text, picUrl, imageUri) {
   var div = document.getElementById(key);
   // If an element for that message does not exists yet we create it.
   if (!div) {
@@ -275,7 +288,7 @@ FriendlyChat.prototype.displayMessage = function(key, name, text, picUrl, imageU
     container.innerHTML = FriendlyChat.MESSAGE_TEMPLATE;
     div = container.firstChild;
     div.setAttribute('id', key);
-    this.messageList.appendChild(div);
+    element.appendChild(div);
   }
   if (picUrl) {
     div.querySelector('.pic').style.backgroundImage = 'url(' + picUrl + ')';
