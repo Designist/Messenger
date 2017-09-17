@@ -4,8 +4,7 @@
     "ignore": [
       "firebase.json",
       "database-rules.json",
-      "storage.rules",
-      "functions"
+      "storage.rules"
     ],
     "headers": [{
       "source" : "**/*.@(js|html)",
