@@ -17,16 +17,43 @@
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
-main, #messages-card {
+main{
   height: 100%;
   padding-bottom: 0;
 }
-#messages-card-container {
+
+#observe-messages {
+  position: absolute;
+  bottom: 0px;
+}
+.profile-card{
+  margin-top: 30px;
+  flex: auto;
+}
+
+#profile-pic{
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  text-align:center;
+}
+#messages-card {
   height: calc(100% - 100px);
-  padding-bottom: 0;
+  padding-bottom:0;
+}
+
+.fit-flex {
+  height:100%;
+}
+.small-card {
+  height: 130px;
 }
 #messages-card {
   margin-top: 30px;
+  padding-top:20px;
 }
 
 .mdl-layout__header-row span {

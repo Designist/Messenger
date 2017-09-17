@@ -33,6 +33,7 @@ function FriendlyChat() {
   this.signInButton = document.getElementById('sign-in');
   this.signOutButton = document.getElementById('sign-out');
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
+  this.profilePic = document.getElementById('profile-pic');
 
   // Saves message on form submit.
   this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
@@ -83,12 +84,12 @@ FriendlyChat.prototype.loadMessages = function() {
 FriendlyChat.prototype.loadObserveMessages = function() {
   this.observeMessagesRef = this.database.ref('observeMessages');
   this.observeMessagesRef.off();
-  var setMessage = function(data) {
+  var setMessage2 = function(data) {
     var val = data.val();
     this.displayMessage(this.observeList, data.key, val.name, val.text, val.photoUrl, val.imageUrl);
   }.bind(this);
-  this.observeMessagesRef.limitToLast(2).on('child_added', setMessage);
-  this.observeMessagesRef.limitToLast(2).on('child_changed', setMessage);
+  this.observeMessagesRef.limitToLast(2).on('child_added', setMessage2);
+  this.observeMessagesRef.limitToLast(2).on('child_changed', setMessage2);
 }
 
 // Saves a new message on the Firebase DB.
@@ -173,19 +174,22 @@ FriendlyChat.prototype.saveImageMessage = function(event) {
 
 // Signs-in Friendly Chat.
 FriendlyChat.prototype.signIn = function() {
-  var provider = new firebase.auth.FacebookAuthProvider();
+  var provider = new firebase.auth.GoogleAuthProvider();
   this.auth.signInWithPopup(provider)
     .then((result)  => {
       var token = result.credential.accessToken;
       var user = result.user;
       this.onlineUsersRef = this.database.ref('onlineUsers');
+      console.log("hellO");
       this.onlineUsersRef.orderByChild("admin").equalTo(1).once("value", (snapshot) => {
+        console.log("hello");
         let updates = {}
         snapshot.forEach(child => updates[child.key] = null);
         this.onlineUsersRef.update(updates);
         var out = this.onlineUsersRef.push({
           uid: user.uid,
-          admin: 1
+          admin: 1,
+          photoUrl: user.photoURL || '/images/profile_placeholder.png'
         });
       });
   });
@@ -220,6 +224,16 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
     this.loadMessages();
 
     this.loadObserveMessages();
+
+    this.database.ref('onlineUsers').orderByChild("admin").equalTo(0).once("value", (snapshot) => {
+      console.log("hey!!!");
+      snapshot.forEach(childSnapshot => {
+        var ky = childSnapshot.key;
+        var childData = childSnapshot.val();
+        console.log(ky, childData);
+        this.setImageUrl(childData.photoUrl, this.profilePic);
+      });
+    });
     // We save the Firebase Messaging Device token and enable notifications.
     this.saveMessagingDeviceToken();
   } else { // User is signed out!
@@ -290,6 +304,7 @@ FriendlyChat.MESSAGE_TEMPLATE =
       '<div class="name"></div>' +
     '</div>';
 
+
 // A loading image URL.
 FriendlyChat.LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif';
 
@@ -297,7 +312,9 @@ FriendlyChat.LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif';
 FriendlyChat.prototype.displayMessage = function(element, key, name, text, picUrl, imageUri) {
   var div = document.getElementById(key);
   // If an element for that message does not exists yet we create it.
+  console.log("disp");
   if (!div) {
+    console.log("new disp");
     var container = document.createElement('div');
     container.innerHTML = FriendlyChat.MESSAGE_TEMPLATE;
     div = container.firstChild;
