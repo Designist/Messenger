@@ -269,3 +269,12 @@ main, #messages-card {
   border-width: 5px;
   margin-top: -5px;
 }
+
+body {
+  background-image: url("../background2.jpg");
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

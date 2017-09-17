@@ -225,6 +225,10 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
     this.userPic.removeAttribute('hidden');
     this.signOutButton.removeAttribute('hidden');
     document.getElementById('hangoutlogo').removeAttribute('hidden');
+    document.getElementById('forms').removeAttribute('hidden');
+    document.getElementById('messages').removeAttribute('hidden');
+    document.getElementById('signedin').removeAttribute('hidden');
+    document.getElementById('signedout').setAttribute('hidden', true);
     // Hide sign-in button.
     this.signInButton.setAttribute('hidden', 'true');
 
@@ -236,6 +240,10 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
   } else { // User is signed out!
     // Hide user's profile and sign-out button.
     document.getElementById('hangoutlogo').setAttribute('hidden', 'true');
+    document.getElementById('forms').setAttribute('hidden', true);
+    document.getElementById('messages').setAttribute('hidden', true);
+    document.getElementById('signedin').setAttribute('hidden', true);
+    document.getElementById('signedout').removeAttribute('hidden');
     this.userName.setAttribute('hidden', 'true');
     this.userPic.setAttribute('hidden', 'true');
     this.signOutButton.setAttribute('hidden', 'true');
