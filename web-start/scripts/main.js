@@ -201,7 +201,8 @@ FriendlyChat.prototype.signIn = function() {
         var out = this.onlineUsersRef.push({
           uid: user.uid,
           admin: 0,
-          photoUrl: user.photoURL || '/images/profile_placeholder.png'
+          photoUrl: user.photoURL || '/images/profile_placeholder.png',
+          name: user.displayName || 'anonymous'
         });
       });
   });

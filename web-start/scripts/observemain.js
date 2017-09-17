@@ -34,7 +34,7 @@ function FriendlyChat() {
   this.signOutButton = document.getElementById('sign-out');
   this.signInSnackbar = document.getElementById('must-signin-snackbar');
   this.profilePic = document.getElementById('profile-pic');
-
+  this.profileName = document.getElementById('display-name');
   // Saves message on form submit.
   this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
   this.signOutButton.addEventListener('click', this.signOut.bind(this));
@@ -189,7 +189,8 @@ FriendlyChat.prototype.signIn = function() {
         var out = this.onlineUsersRef.push({
           uid: user.uid,
           admin: 1,
-          photoUrl: user.photoURL || '/images/profile_placeholder.png'
+          photoUrl: user.photoURL || '/images/profile_placeholder.png',
+          name: user.displayName || 'anonymous'
         });
       });
   });
@@ -232,6 +233,7 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
         var childData = childSnapshot.val();
         console.log(ky, childData);
         this.setImageUrl(childData.photoUrl, this.profilePic);
+        this.profileName.textContent = childData.name;
       });
     });
     // We save the Firebase Messaging Device token and enable notifications.
