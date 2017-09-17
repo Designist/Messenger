@@ -219,6 +219,8 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
     this.userName.removeAttribute('hidden');
     this.userPic.removeAttribute('hidden');
     this.signOutButton.removeAttribute('hidden');
+    document.getElementById('signedin').removeAttribute('hidden');
+    document.getElementById('signedout').setAttribute('hidden', true);
 
     // Hide sign-in button.
     this.signInButton.setAttribute('hidden', 'true');
@@ -245,6 +247,8 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
     this.userName.setAttribute('hidden', 'true');
     this.userPic.setAttribute('hidden', 'true');
     this.signOutButton.setAttribute('hidden', 'true');
+    document.getElementById('signedin').setAttribute('hidden', true);
+    document.getElementById('signedout').removeAttribute('hidden');
 
     // Show sign-in button.
     this.signInButton.removeAttribute('hidden');

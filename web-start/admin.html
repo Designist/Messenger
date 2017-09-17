@@ -50,6 +50,16 @@
   <link rel="stylesheet" href="styles/main2.css">
 </head>
 <body>
+  <div id="signedout">
+    <h1 style="text-align: center; color: rgb(250,250,250); font-weight: 100; font-size: 5.5em; padding-top: 100px; margin: 0;">FriendlyChat</h1>
+    <h3 style="text-align: center; color: rgb(250,250,250); font-weight: 300;">Welcome to our messaging platform.</h3>
+    <div style="text-align: center; padding-top: 100px;">
+      <button  id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+            <i class="material-icons">account_circle</i>Sign-in with Google
+      </button>
+    </div>
+  </div>
+  <div id="signedin">
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing logo -->
@@ -79,7 +89,7 @@
         </div>
         <div id="name"><span id="display-name"></div>
         <div id="security-fails">
-          <a id="login" href="#">Login Details</a> | <a id="security" href="#">Security Questions</a>
+          <a id="login" href="javascript:void(0)">Login Details</a> | <a id="security" href="javascript:void(0)">Security Questions</a>
         </div>
         <div class="profile-name">
           <span id="display-name">
@@ -157,5 +167,6 @@
 <script src="/__/firebase/init.js"></script>
 
 <script src="scripts/observemain.js"></script>
+</div>
 </body>
 </html>

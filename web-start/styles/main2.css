@@ -329,3 +329,12 @@ main{
     text-decoration: none;
     cursor: pointer;
 }
+
+body {
+  background-image: url("../background2.jpg");
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
